@@ -1,0 +1,8 @@
+- `terraform init`
+  - initializes project
+- `terraform plan`
+  - compares what is deployed to what is configured in your state file, and outputs the sequence of steps that will occur to provision that infrastructure.
+- `terraform apply`
+  - takes that set of commands and applies them
+- `terraform destroy`
+  - takes down the previous infrastructure
