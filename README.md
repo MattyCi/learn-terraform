@@ -1,3 +1,6 @@
+# learn-terraform
+## a small repo I'm using to learn terraform and record notes
+
 - `terraform init`
   - initializes project
   - downloads the associated provider defined in the main.tf file
@@ -25,3 +28,18 @@ The `.terraform.lock.hcl` file contains metadata about the dependencies and prov
     - some recommended practices:
       - storing state file in s3 and configuring terraform to pull/push the state file automatically when running `terraform apply`
   - you can configure all kinds of remote backends to store the state file https://developer.hashicorp.com/terraform/language/settings/backends/configuration
+
+- `terraform plan`
+  - takes local config and compares it with the actual state in terraform
+    - avoid making any modifications to infra outside of terraform workflow ie. change something in aws gui, since this can cause terraform state to get out of sync
+  - **EXAMPLE**: previously a database, a network, and 3 servers were deployed
+    - then, the terraform config changes locally and a 4th server is added
+    - `plan` command will notify the user that if applied, a new server will be added
+- `terraform apply`
+  - actually goes and makes the changes via the specified provider
+    - will add the 4th server in the example above
+- `terraform destroy`
+  - it will destroy everything within the configuration!!!
+  - **only cleanup, never run for a live project!!!**
+
+# 
