@@ -27,7 +27,6 @@ The `.terraform.lock.hcl` file contains metadata about the dependencies and prov
     - another reason is that a developer may forget to commit their state file after making changess
     - some recommended practices:
       - storing state file in s3 and configuring terraform to pull/push the state file automatically when running `terraform apply`
-    - terraform will automatically encrypt the state file when remote storing is specified
     - **NOTE**: there is a "bootstrapping" process where you should specify the S3 bucket or whatever infrastructure you need to store the state remotely
   - you can configure all kinds of remote backends to store the state file https://developer.hashicorp.com/terraform/language/settings/backends/configuration
 
